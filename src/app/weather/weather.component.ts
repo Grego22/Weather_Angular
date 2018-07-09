@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoService } from 'src/app/services/Info.service';
-import { WireService} from 'src/app/services/wire.service';
+import { InfoService } from '../Services/info.service';
+import { WireService} from '../Services/wire.service';
 import {Http} from '@angular/http';
 
 
