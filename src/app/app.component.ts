@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DataService} from './services/data.service';
+import {InfoService} from './services/Info.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

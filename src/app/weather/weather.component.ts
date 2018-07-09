@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-import { MessageService} from 'src/app/services/MessageService';
+import { InfoService } from 'src/app/services/Info.service';
+import { WireService} from 'src/app/services/wire.service';
 import {Http} from '@angular/http';
 
 
@@ -13,15 +13,15 @@ import {Http} from '@angular/http';
 export class WeatherComponent implements OnInit {
   private country:string ="";
    private counts:number = 0;
-   myservice:DataService  = null;
-   messageService:MessageService= null;
+   myservice:InfoService  = null;
+   wireService:WireService= null;
    employees=null;
    eventState= "panel panel-primary";
 
-constructor(service:DataService, messageService:MessageService) {
+constructor(service:InfoService, wireService:WireService) {
   	  this.myservice = service;
-      this.messageService = messageService;
-      this.messageService.subscribeEvent()
+      this.wireService = wireService;
+      this.wireService.subscribeEvent()
           .subscribe(this.handleEvents.bind(this));
 }
 

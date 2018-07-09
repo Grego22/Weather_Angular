@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 
 @Injectable()
-export class DataService {
+export class InfoService {
   users:number= 1000;
   http:Http = null; 
   constructor(http:Http) { 

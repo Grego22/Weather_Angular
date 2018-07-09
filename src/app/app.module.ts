@@ -6,8 +6,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { CountryComponent } from './country/country.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
-import {DataService} from './services/data.service';
-import {MessageService} from './services/MessageService'
+import {InfoService} from './services/info.service';
+import {WireService} from './services/wire.service'
 import {FormsModule} from '@angular/forms'
 import {RouterModule, Routes} from '@angular/router'
 import {HttpModule} from '@angular/http';
@@ -41,7 +41,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule, 
     RouterModule.forRoot(route)
   ],
-  providers: [DataService, MessageService],
+  providers: [InfoService, WireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

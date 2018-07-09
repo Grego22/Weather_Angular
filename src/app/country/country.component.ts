@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../Services/MessageService';
+import { WireService } from '../Services/wire.service';
 
 @Component({
   selector: 'app-country',
@@ -10,12 +10,12 @@ export class CountryComponent implements OnInit {
   // clickHandler .....
   changeCountry($event) {
     let countryClicked = $event.target.innerHTML;
-    this.messageService.sendEvent({country: countryClicked});
+    this.wireService.sendEvent({country: countryClicked});
     console.log("Event Fired.......")
   }
-  private messageService: MessageService;
-  constructor(messageService: MessageService) {
-    this.messageService = messageService;
+  private  wireService: WireService;
+  constructor(wireService: WireService) {
+    this.wireService = wireService;
   }
 
   ngOnInit() {
