@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '../Services/info.service';
-import { WireService} from '../Services/wire.service';
 import {Http} from '@angular/http';
+import { WireService} from '../Services/wire.service';
 
 
 
@@ -13,13 +13,13 @@ import {Http} from '@angular/http';
 export class WeatherComponent implements OnInit {
   private country:string ="";
    private counts:number = 0;
-   myservice:InfoService  = null;
+   myService:InfoService  = null;
    wireService:WireService= null;
    employees=null;
    eventState= "panel panel-primary";
 
 constructor(service:InfoService, wireService:WireService) {
-  	  this.myservice = service;
+  	  this.myService = service;
       this.wireService = wireService;
       this.wireService.subscribeEvent()
           .subscribe(this.handleEvents.bind(this));
@@ -28,7 +28,7 @@ constructor(service:InfoService, wireService:WireService) {
 handleEvents(event){
   console.log(event)
    this.counts++;
-   console.log("event received.................");
+   console.log("We got the event!!!");
    this.country= event.country;
 }
 
@@ -37,7 +37,7 @@ handleEvents(event){
 
 
   displayEmployees(){
-	   this.myservice.getEmployees().subscribe(this.handleResponse.bind(this));
+	   this.myService.getEmployees().subscribe(this.handleResponse.bind(this));
   }
   handleResponse(result){
 	     console.log(this);

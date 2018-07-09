@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {InfoService} from './services/Info.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
